@@ -1,0 +1,480 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsopn,amsmath,amssymb,amsthm,eucal,url,enumerate,amscd,amsgen}
+\usepackage[pagebackref]{hyperref}
+\usepackage[arrow]{xy} %function diagramsf
+\usepackage{setspace} %space after section
+\DeclareMathOperator{\sign}{sign} %signo
+
+\usepackage{xfrac} %fracciones diagonals sfrac
+
+\usepackage{nccmath} %centrar ecuaciones
+
+%spacing
+
+\usepackage{enumitem}
+
+%comentarios
+\usepackage{comment}
+
+%to do sttuff
+\usepackage{xcolor}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+
+%lo incluyo para usar := correctamente
+%\usepackage{mathtools}
+%para valores absolutos
+
+
+%\usepackage[toc,page]{appendix}
+
+%\usepackage{enumitem}
+\makeatletter
+\newcommand{\mylabel}[2]{#2\def\@currentlabel{#2}\label{#1}}
+\makeatother
+
+
+
+ 
+%\documentclass[11pt]{amsart}
+
+ 
+ %\usepackage{amsopn}
+ %\usepackage{amsmath,amsthm,amssymb}
+%\usepackage[hypertex]{hyperref}
+
+ %\usepackage[notcite,notref]
+ %{showkeys}
+ 
+\textwidth 14cm 
+\textheight 20cm
+\oddsidemargin .4in
+\evensidemargin .4in
+
+ \newcommand{\nc}{\newcommand}
+ 
+ \renewcommand{\aa}{\mathfrak{a} } \newcommand\aff{{\mathfrak{aff}}}
+\nc{\bb}{\mathfrak{b} }
+ \nc{\cc}{\mathfrak{c} }  \nc{\dd}{\mathfrak{d} } 
+ \newcommand\ee{{\mathfrak e}}   \nc{\ggo}{\mathfrak{g} }
+ \nc{\hh}{\mathfrak{h} }  \nc{\ii}{\mathfrak{i} }
+ \nc{\jj}{\mathfrak{j} }  \nc{\kk}{\mathfrak{k} }
+\nc{\mm}{\mathfrak{m} }   \nc{\nn}{\mathfrak{n} }
+\nc{\pp}{\mathfrak{p} }   \newcommand\qq{{\mathfrak q}}
+\nc{\rr}{\mathfrak{r} } \nc{\sg}{\mathfrak{s} }
+ \nc{\sso}{\mathfrak{so} }  \nc{\spg}{\mathfrak{sp} }
+ \nc{\ssu}{\mathfrak{su} }  \nc{\ssl}{\mathfrak{sl} }
+ \nc{\tog}{\mathfrak{t} }  \nc{\uu}{\mathfrak{u} }
+ \nc{\vv}{\mathfrak{v} } \nc{\ww}{\mathfrak{w} }
+ \nc{\zz}{\mathfrak{z} }  
+ 
+  \newcommand{\ggam}{G/\Gamma}
+%\renewcommand\AA{{\mathbf A}}
+\nc{\CC}{{\mathbb C}}
+ \nc{\DD}{{\mathbb D}}
+\nc{\FF}{{\mathbb F}}
+\nc{\GG}{{\mathbb G}}  
+\nc{\HH}{{\mathbb H}}
+\nc{\II}{{\mathbb I}}
+\nc{\JJ}{{\mathbb J}}
+\nc{\KK}{{\mathbb K}}
+\nc{\NN}{{\mathbb N}}
+\newcommand\QQ{\mathbb Q}
+\nc{\RR}{{\mathbb R}}  
+ \nc{\ZZ}{{\mathbb Z}}  
+ 
+ \newcommand{\Heis}{\mathrm{H}}
+
+ 
+\nc{\ggob}{\overline{\mathfrak{g}}} 
+ 
+\nc{\glg}{\mathfrak{gl}}
+  
+\nc{\pca}{\mathcal{P}} \nc{\nca}{\mathcal{N}}
+ 
+ \nc{\vp}{\varphi} \nc{\ddt}{\frac{{\rm d}}{{\rm d}t}}
+ \nc{\la}{\langle} \nc{\ra}{\rangle}
+ \nc{\brg}{[\,,\,]_{\ggo}}
+ \nc{\brv}{[\,,\,]_{\vv}}
+ %\nc{\sqb}{{\sqbullet}}
+
+ 
+ \nc{\SO}{{\sf SO}} \nc{\Spe}{{\sf Sp}} \nc{\Sl}{{\sf Sl}}
+ \nc{\SU}{{\sf SU}} \nc{\Or}{{\sf O}} \nc{\U}{{\sf U}}
+ \nc{\Gl}{{\sf Gl}} \nc{\Se}{{\sf S}} \nc{\Cl}{{\sf Cl}}
+ \nc{\Spin}{{\sf Spin}} \nc{\Pin}{{\sf Pin}}
+ 
+ 
+%operadores pablo
+  \nc{\sldr}{\operatorname{SL(2,\R)}}
+  \nc{\sldrt}{\operatorname{\widetilde{SL}(2,\R)}}
+  \nc{\Gamt}{\operatorname{\widetilde{\Gamma}}}
+  \nc{\alpt}{\operatorname{\widetilde{\alpha}}}
+  
+  \nc{\gsldr}{\operatorname{\mathfrak{sl}(2,\R)}}  
+  \nc{\gldr}{\operatorname{GL(2,\R)}} 
+  \nc{\sldz}{\operatorname{SL(2,\Z)}}
+  \nc{\B}{\operatorname{B}}
+  \nc{\oscn}{\operatorname{Osc_n(\lambda_1,...,\lambda_n)}}
+  \nc{\hg}{\operatorname{\hat{\gamma}}}
+
+  
+ \nc{\ad}{\operatorname{ad}} \nc{\Ad}{\operatorname{Ad}}
+ \nc{\coad}{\operatorname{coad}} 
+ \nc{\rank}{\operatorname{rank}} \nc{\Irr}{\operatorname{Irr}}
+ \nc{\End}{\operatorname{End}} \nc{\Aut}{\operatorname{Aut}}
+ \nc{\Inn}{\operatorname{Inn}} \nc{\Der}{\operatorname{Der}}
+ \nc{\Ker}{\operatorname{Ker}} \nc{\Iso}{\operatorname{Iso}}
+ \nc{\Le}{\operatorname{L}} \nc{\Fe}{\operatorname{F}}
+\nc{\tr}{\operatorname{tr}}
+ \nc{\dif}{\operatorname{d}} \nc{\sen}{\operatorname{sen}}
+ \nc{\modu}{\operatorname{mod}} \nc{\Ric}{\operatorname{R}}
+ \nc{\Sym}{\operatorname{Sym}} \nc{\sca}{\operatorname{sc}}
+ \nc{\scalar}{{\sf s}} \nc{\grad}{\operatorname{grad}}
+ \nc{\ricci}{\operatorname{r}} \nc{\riccin}{\operatorname{Ric}}
+ \nc{\Lie}{\operatorname{L}} \nc{\ct}{\operatorname{T}}
+
+ \newenvironment{proof1}{\noindent {\textit{Proof of Theorem \ref{connected}:}}}{\hfill $\blacksquare$\bigskip}
+ 
+ \newtheorem{correccion}{Correccion}
+ 
+%\newcommand{\deax}{\frac{\partial}{\partial x}}
+%\newcommand{\deay}{\frac{\partial}{\partial y}}
+%\newcommand{\deaz}{\frac{\partial}{\partial z}}
+%\newcommand{\deat}{\frac{\partial}{\partial t}}
+
+\newcommand{\deax}{\partial_x}
+\newcommand{\deay}{\partial_y}
+\newcommand{\deaz}{\partial_z}
+\newcommand{\deat}{\partial_t}
+
+%%%%%%%%%%%%%%%%%%%% COMANDOS DE VIVI AGREGADOS%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cen}{\mathfrak{z}(\mathfrak{g})}
+ \newcommand{\rad}{\mathfrak{r}}
+ \newcommand{\sem}{\mathfrak{s}}
+ \newcommand{\meti}{\left\langle}
+ \newcommand{\metd}{\right\rangle}
+\newcommand{\lela}{\left \langle}
+\newcommand{\rira}{\right \rangle}
+\newcommand{\bil}{\lela\,,\,\rira}
+\newcommand{\tf}{\tilde{f}}
+\nc{\mr}{{\mathfrak r}}
+\nc{\ms}{{\mathfrak s}}
+\nc{\mv}{{\mathfrak v}}
+\nc{\lra}{\longrightarrow}
+\nc{\R}{{\mathbb R}}
+\nc{\Z}{{\mathbb Z}}\newcommand{\mX}{\mathfrak X }
+\newcommand{\mF}{\mathfrak F }
+\newcommand{\mg}{\mathfrak n }
+\newcommand{\mn}{\mathfrak n }
+\newcommand{\mz}{\mathfrak z }
+\newcommand{\mh}{\mathfrak h }
+\newcommand{\ma}{\mathfrak a }
+\newcommand{\mgg}{\mathfrak g }
+\newcommand{\mt}{\mathfrak t }
+\newcommand{\mb}{\mathfrak b }
+\newcommand{\ts}{\mathfrak{ts} }
+\newcommand{\bsh}{\backslash}
+
+\nc{\hs}{{G/\Gamma}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \theoremstyle{plain}
+ \newtheorem{thm}{Theorem}[section]
+ \newtheorem{prop}[thm]{Proposition}
+ \newtheorem{cor}[thm]{Corollary}
+ \newtheorem{lem}[thm]{Lemma}
+ 
+ \theoremstyle{definition}
+ \newtheorem{defn}[thm]{Definition}
+ 
+ \theoremstyle{remark}
+ \newtheorem{rem}{Remark}
+ \newtheorem*{rems}{Remarks}
+ \newtheorem{exa}[thm]{Example}
+ \newtheorem{exams}[thm]{Examples}
+ \newtheorem*{nota}{Note}
+ \newtheorem{ob}[thm]{Observation}
+ \newtheorem{obs}[thm]{Observations}
+ 
+ \newcommand{\ri}{{\rm (i)}}
+ \newcommand{\rii}{{\rm (ii)}}
+ \newcommand{\riii}{{\rm (iii)}}
+ \newcommand{\riv}{{\rm (iv)}}
+ \newcommand{\rv}{{\rm (v)}}
+ \newcommand{\script}{\scriptstyle}
+ 
+ %=====================================================
+ %\setlength{\textwidth}{15,5cm} \setlength{\evensidemargin}{1cm}
+ %\setlength{\oddsidemargin}{1cm}
+ %=====================================================
+ 
+ \begin{document}
+ 	
+ 
+\title[Geodesics on compact Lorentzian manifolds]{Geodesics on homogeneous compact Lorentzian manifolds - sl-tilde}
+
+\begin{abstract}
+	
+\end{abstract}
+
+\author{}
+
+\let\today\relax  %rpm removes date
+
+
+\maketitle
+
+
+
+
+
+
+
+
+
+\section{sl-tilde}\label{sectionosc}
+
+This section is concerned with the study of geodesics of Lorentian compact spaces  $$M=\oscn/ \Gamma,$$ where $\Gamma$ is a cocompact lattice in $\oscn$. The following results shows a condition to construct such lattices. 
+
+\begin{lem}\cite{MeRe}\label{lema_medina}
+	An oscillator group $\oscn$ admits a lattice if and only if the numbers $\lambda_j$ generate an additive discrete subgroup of $\R$.
+\end{lem}
+
+In the demonstration of the lemma it is also shown that for a lattice $\Gamma$, the set $\mathrm{T}(\Gamma):=\{ t \in \R : (z,u,t) \in \Gamma \}$ is an additive discrete subgroup of $\RR$, also shown in \cite{MF}, page 93. Let $t_0$ be the positive generator of $\mathrm{T}(\Gamma)$. \\
+
+Notice that for $(w,b,0) \in \Gamma$, the set of elements in the lattice
+\begin{equation*}
+    \{ (z,u,t_0)^n.(w,b,0).(z,u,t_0)^{-n}=(w,e^{n t_0 N_{\lambda}}b,0) : n \in \mathbb{N} \}
+\end{equation*}
+
+is discrete and compact, which implies that it is a finite set. Furthermore there is a smaller positive integer $K_0$ such that $e^{K_0 t_0 N_{\lambda}} = Id$. In particular it follows that $t_0$ satisfies
+\begin{equation} \label{oscilator-N}
+t_0=\frac{2 \pi k_i}{\mathrm{K_0} \lambda_i},
+\end{equation}
+for some integers $k_i$ with $i=1, ..., n$.\\
+
+In \cite{MF}, Fischer introduces a family of Lie groups named $Osc_n(\omega_r, B_r)$ defined by an element $r \in \mathbb{N}^n$ such that $r_i | r_{i+1}$. Denote by $\omega_r(u,v):=u^TN_{-r}v$ the symplectic form on $\R^{2n}$ and by $B_r \in GL(2n, \R)$ the linear transformation satisfying
+
+\begin{itemize}
+    \item $\omega_r(B_r.,.)$ is symmetric and negative definite
+    \item $e^{B_r} \in SL(2n,\Z)$.
+\end{itemize}
+
+The group operation for $Osc_n(\omega_r, B_r)$ with base on the manifold $\R \oplus \R^{2n} \oplus \R$ is given by
+
+\begin{equation}
+    (z_1,v_1,t_1) . (z_2,v_2,t_2)=(z_1+z_2+\frac{1}{2}v_1^{T}N_{-r} e^{t_1 B_r}v_2,v_1+e^{t_1 B_r}v_2,t_1+t_2).
+\end{equation}
+
+Let $L(\xi_0)$ the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ such that $\xi_0$ is an element in $\R^{2n}$ such that the above subgroup is a lattice. \\
+
+In each of these groups the author defines the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ and if $\xi_0$ is such that the latter produce a lattice then subgroup is called $L(\xi_0)$. In particular, according to example 3.1 of \cite{MF}, $\xi_0$ verifies the following condition 
+\begin{equation}\label{xi-condition}
+    (w_r(\xi_0, e^{B_r}e_i), e^{B_r} e_i, 0) \in \,\, <\{ (1,0,0),(0,e_i,0) \}>
+\end{equation}
+
+
+These lattices $L(\xi_0)$ of $Osc_n(w_r, B_r)$ can be associated to lattices of $\oscn$ through a group isomorphism, for every lattice $\Gamma$ of $\oscn$ there exist a group $Osc_n(w_r, B_r)$, $\xi_0 \in \R^{2n}$ and an isomorphism $\Phi: \oscn \rightarrow Osc_n(w_r, B_r)$ such that $\Phi(\Gamma) = L(\xi_0)$ (see Theorem 5 of \cite{MF}). \\
+
+The explicit definition of $\Phi$ can be found in the proof of the mentioned theorem. The following property of this isomorphism holds:
+
+\begin{equation} \label{condition-exp}
+    \Phi^{-1}(z,0,t) = (w z, 0, \widetilde{t_0} t ) \mbox{ whenever } e^{t B_r} = Id.
+\end{equation}
+Additionally it is shown that $B_r := \pm t_0 S N_{\lambda} S^{-1}$ \footnote{this follows noticing that $\oscn = Osc_n(w_{1}, N_{\lambda})$.}, for some invertible matrix $S$. 
+
+\begin{lem}\cite{MF}\label{oscilador-elementos}  %dar idea demostracion
+	Let $\Gamma$ be any lattice of $\oscn$. Then:
+	\begin{enumerate}
+	    \item there always exists \,\,\, $w \neq 0 \in \R$ such that $(w,0,0) \in \Gamma$.
+	    \item if $\Gamma$ is such that $t_0 = \frac{2 \pi k_i}{\lambda_i}$ for positive integers $k_i$ then there exists an element in $\Gamma$ of the form $\gamma = (z, 0, t)$ where $z$ and $t$ are non zero.
+	\end{enumerate}
+\end{lem} 
+
+\begin{proof}
+
+Since $\Gamma = \Phi^{-1}(L(\xi_0))$, then $\Phi^{-1}(1,0,0) = (w,0,0) \in \Gamma$, according to (\ref{phi-2}), with $w \neq 0 $; this proves the first part of the lemma.\\
+
+The second part is proved noticing first that the condition $t_0 = \frac{2 \pi k_i}{\lambda_i}$ conrresponds to lattices such that $e^{tN_\lambda} = Id$ for any $t \in \mathrm{T}(\Gamma)$, therefore $$e^{B_r} = Se^{t_0N_\lambda}S^{-1}=Id.$$ \\
+
+The latter equation, together with the fact that $r_i | r_{i+1}$ applied in Condition (\ref{xi-condition}) gives the following property: $$\xi_0=(\frac{z_1}{r_1},\frac{z_2}{r_1}, \frac{z_3}{r_1 k_2}, \frac{z_4}{r_1 k_2}, ..., \frac{z_{2n-1}}{r_1 k_2 k_3 ... k_n}, \frac{z_{2n}}{r_1 k_2 k_3 ... k_n} ), \quad \mbox{for some } z_i \in \mathbb{N},$$ and it can be verified that $$(0,\xi_0,1)^{r_1 k_2 k_3 ... k_n} \in \Z^n. $$
+
+Finally, since $(1,0,0), (0,-e_i,0)$ are elements of $L(\xi_0)$, after convinient multiplications one can construct an element $(1,0,k)$ of $L(\xi_0)$ such that, $\Phi^{-1}(1,0,k) = (w,0,\widetilde{t_0} k)$, Condition (\ref{condition-exp}). 
+
+\end{proof}
+
+
+\begin{obs}\label{obs-osc}
+Let $\Gamma$ be a lattice of the oscillator group $\oscn$ with $t_0=\frac{2\pi k_i}{\mathrm{K_0} \lambda_i}$ as in Equation \eqref{oscilator-N}, notice that:
+\begin{itemize}
+    \item The lightlike geodesics in $\oscn$ with $a=0$ \eqref{geo2}, verify $b_j=c_j=0$ for all $j=1,...,n$. Consequently, these take the form $ \alpha_d(s)=(ds,0,0)$ and intersect $\Gamma$ because there exists $w > 0$ $(w,0,0) \in \Gamma$ according to last Lemma. This means that  $\alpha(\tilde{s})=(w,0,0)$ for some $\tilde{s} > 0$.
+    \item The lightlike geodesics with $a \neq 0$ verify $\alpha(\frac{\mathrm{K_0} t_0}{a}) = (0,0,\mathrm{K_0} t_0)$, see Expressions \eqref{geo_osc_1}. If $\Gamma$ contains an element of the form $(0,0,\hat{t})$ with $\hat{t}=p t_0$ for some $p \in \mathbb{Z}$, then $$\alpha(p \mathrm{K_0} t_0) = (\alpha(\mathrm{K_0} t_0))^p = (0,0,\hat{t})^p \in \Gamma.$$ 
+\end{itemize}
+
+
+\begin{thm}\label{teoremaoscilador}
+	Let $\Gamma$ be a cocompact lattice of $\oscn$, and consider the compact Lorentzian manifold $M=\oscn/\Gamma$, then only one of the following situations occurs
+	\begin{itemize}
+		\item either $\Gamma$ contains an element of the form $(0,0,t),$ $t \neq 0$ and every lightlike geodesic of $M$ is closed,
+		\item or, for any $t \neq 0$, $(0,0,t) \notin \Gamma$ and at every point in $M$ there is exactly one direction for which all lightlike geodesics of $M$ are closed and the rest are not-closed. This direction is spanned by $Z \in \mathfrak{osc}_n(\lambda_1, ..., \lambda_n)$.		
+	\end{itemize}
+	
+\end{thm}
+
+\begin{proof}
+	Recall that it suffices to study the geodesics starting at $o:=\pi(e)$ and that every geodesic $\hat{\alpha}$ is the projection of some geodesic, $\alpha$, on $\oscn$: $\hat{\alpha}=\pi(\alpha)$ with $\alpha(0)=e$. Also, $\hat{\alpha}$ is closed in $M$ if $\alpha(s) \in \Gamma$ for some $s>0$.\\
+	
+	As observed in \ref{obs-osc}, all lightlike geodesics of the form $\pi((ds,0,0))$ are closed in $M$, and so geodesics pointing on this direction will always be closed. Therefore, to prove the theorem it must be that all the other lightlike geodesics are either closed or non is closed.\\
+	
+	Let $\alpha$ be a lightlike geodesic from the remaining family, and suppose it it closed, this means that there exists some $\gamma=(z,u,t) \in \Gamma$ for which $\alpha(s)=\gamma$ for some $s>0$. Since the curve $\alpha$ is a one-parameter subgroup of $\oscn$, then for any integer $m$: $\alpha(m s)=\gamma^m$, which is an element of $\Gamma$. Recall also that since $t \in \mathrm{T}(\Gamma)$ it is of the form $r t_0$ for some integer $r$ and $t_0=\frac{2 \pi k_i}{K_0 \lambda_i}$. Finally, since $s=\frac{t}{a}$, one can compute that $\gamma^{K_0} = \alpha(K_0 \frac{t}{a}) = (0,0,K_0 t) = (0,0,K_0 r t_0)$, and therefore, since $K_0 r$ is an integer, this element is in the lattice and every lightlike geodesic of $M$ is closed.\\
+	
+	In conclusion, when an element of the form $(0,0,k t_0)$ is in the lattice every lightlike geodesic of $M$ is closed, otherwise only $\hat{\alpha}_d(s)=(ds,0,0)\Gamma$ are.
+	
+\end{proof}
+
+\begin{comment}
+\begin{cor}
+	Let $\Gamma$ be a cocompact lattice of $\oscn$, then the lightlike geodesics of $M=\oscn/\Gamma$ are all closed if and only if $\Gamma$ contains an element of the form $(0,0,t)$.
+\end{cor}
+\end{comment}
+
+
+\begin{exa} Both situations stated in the above theorem are possible. Take for example the three families of cocompact lattices constructed in \cite{OV} for $Osc(1)$, all the dimenstion four oscillator groups are isomorphic to $Osc_1(1)$,
+	\begin{eqnarray*} \label{geodlight}
+		\Lambda_{n,0}&=&\frac{1}{2n}\Z \times \Z \times \Z \times 2 \pi \Z,\\
+		\Lambda_{n,\pi}&=&\frac{1}{2n}\Z \times \Z \times \Z \times \pi \Z,\\
+		\Lambda_{n,\frac{\pi}{2}}&=&\frac{1}{2n}\Z \times \Z \times \Z \times \frac{\pi}{2} \Z,
+	\end{eqnarray*}
+	where $n \in \mathbb{N}$, for which the authors proved that all lightlike geodesics of $M_{n,0}=Osc_1(1)/\Lambda_{n,0}, M_{n,\pi}=Osc_1(1)/\Lambda_{n,\pi}$ and $M_{n,\pi/2}=Osc_1(1)/\Lambda_{n,\pi/2}$ are closed. However other  lattices can be obtained by noticing that
+	\begin{eqnarray*}
+		\phi_m &:& Osc_1(1) \rightarrow Osc_1(1)\\
+		\phi_m(z,x,y,t)&=&(z+mt,x,y,t) \textrm{,    $m \in \R$}
+	\end{eqnarray*}
+	are  automorphisms of $Osc_1(1)$. So, the  lattices $\phi(\Lambda_{n,\bullet})$ most likely do not contain an element of the form $(0,0, t)$. For example, given an integer $p \neq 0$, the lattice $\phi_p(\Lambda_n,0)$ does not contain such element since $\frac{a}{2 n}+ p \, 2 \pi b = 0$ has no solution for integers $a,b$. Thus, for these lattices not every lightlike geodesic is closed. \\
+    
+\end{exa}
+
+
+To start the study of timelike and spacelike geodesics of $\oscn$ consider the geodesics starting at the identity element as in (\ref{geo_osc_1}). Their initial velocity is $(d,b_j,c_j,a)$ where $a\neq0$ and let $\hg=(\hat{z}, \hat{\eta}, \hat{t})$ be an element of the lattice $\Gamma$. Assume that $\alpha(\hat{t}/a)=\gamma$ with $\hat{t}/a > 0$. In this situation, Equations (ver) traduce into
+    
+    \begin{equation}\label{oscilador_geos_1}
+    \left( \begin{matrix}
+    \sin{\lambda_j \hat{t}} & \cos{\lambda_j \hat{t}} -1 \\
+    1 - \cos{\lambda_j \hat{t}} & \sin{\lambda_j \hat{t}} \\
+    \end{matrix} \right)
+    \left( \begin{matrix}
+    b_j \\
+    c_j \\
+    \end{matrix} \right)=
+    \left( \begin{matrix}
+    \hat{b_j} \\
+    \hat{c_j}
+    \end{matrix} \right).
+    \end{equation}
+
+    \begin{equation}\label{oscilador_geos_2}
+        \hat{z} =  \left(d + \frac{1}{2 a} \sum_{k=1}^{n} \frac{ b_{k}^{2}+c_k^{2}}{\lambda_k}\right)\frac{\hat{t}}{a}- \frac{1}{2 a^{2}}  \sum_{k=1}^{n} \frac{b_{j}^{2}+c_j^2}{\lambda_k^{2}} \sin(\lambda_k \hat{t}).
+    \end{equation}
+
+These expressions are used to prove the first part of the following theorem.
+
+
+
+\begin{thm}
+    For any lattice $\Gamma$ of $\oscn$ there are both closed and open timelike and spacelike geodesics on the compact space $\oscn / \Gamma$.
+\end{thm}
+
+\begin{proof}
+
+
+1) Existence of closed timelike and spacelike geodesics: As seen in section (3) having closed timelike or spacelike geodesics of $\oscn/\Gamma$ is equivalent to having timelike or spacelike geodesics of $\oscn$ that intersect $\Gamma$ at some positive time.\\
+
+Take an element $(w,0,0) \in \Gamma$ with $w>0$ (see Lemma ...), and consider any element $\gamma=(z, \eta, t) \in \Gamma$, then by multiplying one gets  $(w,0,0)^m.(\hat{z}, \hat{\eta}, \hat{t})=(m w+\hat{z}, \hat{\eta}, \hat{t})$ for any $m \in \mathbb{Z}$. Consider now the following two posibilities for $K_0$:
+
+\begin{itemize}
+    \item Case $\mathrm{K_0} = 1$. This is the case of the second item of Lemma (\ref{oscilador-elementos}) then there exists $\gamma = (z,0,t) \in \Gamma$ with $z t \neq 0$. Let $\gamma_m := (m w+z, 0, t)=(w,0,0)^m.(z,0,t)$ and consider the geodesic $\alpha_m$ with initial velocity $$a=t, b_j=c_j=0, d_m = m w + z.$$  It follows from equations above that $\alpha_m(1)=\gamma_m$ (in fact, for $\mathrm{K_0}=1$ the matrix in \eqref{oscilador_geos_1} is trivial). Finally $\alpha_m$ is timelike or spacelike if $\frac{mw+z}{t}$ is negative or positive respectively; any case can be achieved by choosing $m$. 
+
+    \item Case $K_0>1$. Consider $\gamma=(x,u,(K_0-1)t_0)$, and $\gamma_m := {(m \omega + x, u, (K_0-1) t_0)} = (w,0,0)^m.(x,u,(K_0-1) t_0)$. For these $\gamma_m$ the matrix in equation \eqref{oscilador_geos_1} is non-singular (because if $\lambda_j (K_0-1) t_0 = 2 \pi s_j$ for integers $s_j$ one gets $t_0 = \frac{2 \pi (K_0-1)}{\lambda_j}$ meaning $K_0=1$, which is a contradiction). Therefore equation \eqref{oscilador_geos_1} gives unique solutions $b_j,c_j$, independent of $m$. Then setting $a=(K_0-1) t_0$ and easily solving equation \eqref{oscilador_geos_2} for $d=d_m$ one gets parameters $a,b_j,c_j,d_m$ such that $\alpha_m(1) = \gamma_m$.     
+    Finally these geodesics are closed in the quotient and are timelike or spacelike if $$ 2 p t_0 (mw+x) - \sum_{k=1}^{n} \frac{b_j^2 + c_j^2}{\lambda_k^2}\sin(\lambda_k (K_0-1) t_0) $$ is negative or positive respectively, both cases are achievable by choosing different values of $m$. \\
+    
+\end{itemize}
+
+2) Existence of open timelike and spacelike geodesics:
+
+Let $\hat{\gamma}=(\hat{z},\hat{u}, p K_0 t_0) \in \Gamma$, elements like these can be obtained by elevating any element with not null $t$-component to the $K_0$th power. Let $\hat{s}$ such that $\alpha(\hat{s})=(z(\hat{s}),u(\hat{s}),t(\hat{s})) = \hat{\gamma}$, where $\alpha$ is a geodesic of $\oscn$ (with $a \neq 0$). Then it must be $t(\hat{s}) = a \hat{s} = p K_0 t_0$, which implies $u(\hat{s})=0$ and $z(\hat{s}) = (d + \frac{1}{2 a} \sum^n_{k=1} \frac{b_k^2+ c_k^2}{\lambda_k}) \frac{p K_0 t_0}{a}$, where $a, b_k, c_k, d$ define the initial velocity of $\alpha$. \\
+    
+For any $\epsilon >0$, consider $I_d := [d, d+ \epsilon]$, if for any $d'$ in $I_d$ the geodesic of initial velocity given by $a, b_k,c_k, d'$ were to intercept the lattice at $s'$, $\alpha_{d'}(s') \in \Gamma$ then it must be $t'(s') = r' t_0$ for some integer $r'$. This way one can define a function $F: I_d \to \ZZ$, and it is easy to see that there is an infinitely repeating element in the image of $F$, call it $r_{\infty}$. Then $A_d:= \{ d' \in I_d : F(d')= r_{\infty} \}$ is bounded and contains a convergent sequence, call it $\{d'\}_n$.\\
+    
+Finally take the elements in the lattice $\Gamma$ given by
+    \begin{eqnarray*}
+    \alpha_{d'_n}(\frac{r_{\infty} t_0}{a}) = ( (d'_n + \frac{1}{2 a} \sum_{k=1}^{n} \frac{ b_{k}^{2}+c_k^{2}}{\lambda_k})\frac{\hat{t}}{a}- \frac{1}{2 a^{2}} (  \sum_{k=1}^{n} \frac{b_{j}^{2}+c_j^2}{\lambda_k^{2}} \sin(\lambda_k \hat{t}) ), \\ 
+    R_1(r_{\infty} t_0)\left( \begin{matrix}
+    b_1 \\
+    c_1 \\
+    \end{matrix} \right),..., R_n(r_{\infty} t_0)\left( \begin{matrix}
+    b_n \\
+    c_n \\
+    \end{matrix} \right), \\     
+    r_\infty t_0 ),
+    \end{eqnarray*}
+
+    with $R_j(x) := \left( \begin{matrix}
+    \sin{(\lambda_j x)} & \cos{(\lambda_j x)} -1 \\
+    1 - \cos{(\lambda_j x)} & \sin{(\lambda_j x)} \\
+    \end{matrix} \right)
+    \left( \begin{matrix}
+    b_j \\
+    c_j \\
+    \end{matrix} \right)$ , see \eqref{oscilador_geos_1}. Since $\{d'_n\}_n$ is convergent, the resulting sequence $\{ \alpha_{d'_n}(\frac{r_{\infty} t_0}{a}) \}_n$ also converges. This is a contradiction since $\Gamma$ is discrete.
+
+\end{proof}
+
+
+
+
+
+
+
+%bibliograf\'ia
+\begin{thebibliography}{GGGG}
+
+\bibitem{ON} {\sc B. O'Neill}, {\it Semi-Riemannian geometry with
+applications to relativity}, Academic Press (1983).
+
+\bibitem{MF} {\sc M. Fischer}, {\it Latices of Oscilator Groups}, Journal of Lie Theory (2017).
+
+t\bibitem{OV} {\sc V. del Barco, \sc G. Ovando, \sc F. Vittone}, {\it Lorentzian compact manifolds: Isometries and geodesics}, Journal of Geometry and Physics (2014).
+
+
+\bibitem{DM} {\sc D. W. Morris}, {\it introduction to ARITHMETIC SUBGROUPS}, arXiv:math/0106063v6 (2015).
+
+\bibitem{Me} {\sc A. Medina}, {\it Grupes de Lie Munis de MÃ©triques Bi-Invariantes}, TÃ¶hoku Mathematical Journal (1984).
+
+\bibitem{MeRe} {\sc A. Medina,  P. Revoy}, {\it les groupes oscillateurs et leurs reseaux}, manuscripta mathematica, Springer-Verlag (1985).
+
+\bibitem{MU} {\sc D. M\"uller}, {\it Isometries of bi-invariant pseudo-Riemannian metrics on Lie groups},  Geom. Dedicata {\bf 29},  65--96 (1989).
+[20]
+
+\bibitem{OV2} {\sc G. Ovando}, {\it Lie algebras with ad-invariant metrics- A survey}, In Memorian Sergio Console, Rendiconti del Seminario Matematico di Torino. {\bf  74}, 1-2, 241 -- 266 (2016).
+
+\bibitem{WAR} {\sc B. O'Neill}, {\it Semi-Riemannian geometry with
+applications to relativity}, Academic Press (1983).
+
+\bibitem{HEL} {\sc Helgasson}, {\it COMPLETAR, VER LIBROS}.
+
+\bibitem{INCLUDE1}{\it falta1}
+
+\bibitem{INCLUDE2}{\it Jacobson-Morozov}
+
+\end{thebibliography}
+
+\appendix 
+%\section{parametros appendice} \label{appendix1}
+%En la siguiente table se muestran los valores ...
+
+
+
+\end{document}
